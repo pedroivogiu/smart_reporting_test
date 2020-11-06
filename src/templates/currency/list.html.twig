@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <link href="{{ asset('css/styles.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/datatables.min.css') }}"rel="stylesheet"/>
+        <link href="{{ asset('css/select2.min.css') }}"rel="stylesheet"/>
+        {% endblock %}
+    </head>
+    <body id='page-top'>
+        {% block body %}
+    	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Pedro's test</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#list">Check values</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Pedro Ivo</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Hi guys! I used a free bootstrap theme called Grayscale. So this whole css isn't mine. I used this template to make the test user friendly</h2>
+                    <a class="btn btn-primary js-scroll-trigger" href="#list">Let's see the test!</a>
+                </div>
+            </div>
+        </header>
+        <!-- Signup-->
+        <section class="signup-section" id="list">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-10 mx-auto text-center">
+                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                        <h2 class="text-white mb-5">Update prices!</h2>
+                        <form class="form-inline d-flex">
+                            <input class="form-control flex-fill col-md-3" id='amount' type="text" placeholder="Type the amount..." /> 
+                            <select class="form-control flex-fill col-md-3" id='initial_currency' ></select>
+                            <select class="form-control flex-fill col-md-3" id='final_currency' ></select>
+                            <button class="btn btn-primary mx-auto" id='addValue' type="button">Check!</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                	<div class='col-md-12'>&nbsp;</div>
+                </div>
+                <div class="row">
+                	<div class="col-md-12 card">
+                		<table id='dataTable' class='display' style="width: 100%;">
+                			<thead>
+                				<tr>
+                					<th>Initial Currency</th>
+                					<th>Final Currency</th>
+                					<th>Value</th>
+                					<th>Converted Value</th>
+                				</tr>
+                			</thead>
+                		</table>
+                	</div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50">Rua do ouro, 457, apt 102, Belo Horizonte - MG - BR</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50"><a href="#!">pedrin.ivo@gmail.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50">+55 (31) 99929-2224</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="https://www.linkedin.com/in/pedro-ivo-cavalcanti-do-val-4a246297/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container">...</div></footer>
+        {% endblock %}
+        {% block javascripts %}
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="{{ asset('js/datatables.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.maskMoney.js') }}"></script>
+        <script src="{{ asset('js/select2.min.js') }}"></script>
+        <script src="{{ asset('js/scripts.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

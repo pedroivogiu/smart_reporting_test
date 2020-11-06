@@ -1,0 +1,1 @@
+# smart_reporting_test
